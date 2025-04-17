@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumelys - Service & Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Lumelys</h1>
+        <p>We facilitate the promotion of tourism experiences and sports services.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#training">🏋️‍♂️ Sports Training</a></li>
+        </ul>
+    </nav>
+
+    <section id="training">
+        <h2>🏋️‍♂️ Sports Training</h2>
+        <p>Personalized plans to improve your performance.</p>
+        <ul>
+            <li>✅ Training planning.</li>
+            <li>✅ Cyclist advice.</li>
+            <li>✅ Performance analysis.</li>
+        </ul>
+    </section>
+
+    <select id="language-selector" onchange="changeLanguage()">
+        <option value="en" selected>🇺🇸 English</option>
+        <option value="es">🇪🇸 Español</option>
+    </select>
+
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById("language-selector").value;
+            if (lang === "es") {
+                window.location.href = "index_training_es.html";
+            } else {
+                window.location.href = "index_training_en.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
