@@ -1,33 +1,39 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("App cargada correctamente.");
-});
-// Importar Supabase
-const { createClient } = supabase
+
+import { createClient } from "@supabase/supabase-js";
 
 // Conectar con Supabase
-const supabaseUrl = "https://TU-PROYECTO.supabase.co"
-const supabaseAnonKey = "TU-API-KEY"
-
+const supabaseUrl = "https://TU-PROYECTO.supabase.co";
+const supabaseAnonKey = "TU-API-KEY";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// Función para obtener datos del usuario
+// Obtener datos del usuario y mostrarlos en la página
 async function obtenerDatos(usuario) {
-    let { data, error } = await supabase
-        .from("inversores")
-        .select("*")
-        .eq("usuario", usuario);
+    try {
+        let { data, error } = await supabase
+            .from("inversores")
+            .select("*")
+            .eq("usuario", usuario);
 
-    if (error) {
-        console.error("Error obteniendo datos:", error);
-    } else {
-        console.log("Datos del usuario:", data);
-        mostrarDatos(data[0]);
+        if (error) throw error;
+
+        if (data.length > 0) {
+            mostrarDatos(data[0]);
+        } else {
+            console.log("Usuario no encontrado.");
+        }
+    } catch (err) {
+        console.error("Error obteniendo datos:", err.message);
     }
 }
 
-// Función para mostrar los datos en la página
+// Mostrar los datos en la página
 function mostrarDatos(usuario) {
-    document.getElementById("nombre").innerText = usuario.usuario;
-    document.getElementById("cantidad").innerText = `$${usuario.cantidad_invertida}`;
-    document.getElementById("ganancias").innerText = `$${usuario.ganancias_disponibles}`;
+    document.getElementById("nombre").textContent = usuario.usuario;
+    document.getElementById("cantidad").textContent = `$${usuario.cantidad_invertida}`;
+    document.getElementById("ganancias").textContent = `$${usuario.ganancias_disponibles}`;
 }
+
+// Ejecutar la función al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+    obtenerDatos("nombreDelUsuario"); // Reemplázalo con datos dinámicos si los tienes
+});
