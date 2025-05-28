@@ -2,7 +2,7 @@
 import { createClient } from "@supabase/supabase-js";
 
 // Conectar con Supabase
-const supabaseUrl = "https://TU-PROYECTO.supabase.co";
+const supabaseUrl = "https:// Leomaya370's Project.supabase.co";
 const supabaseAnonKey = "TU-API-KEY";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
