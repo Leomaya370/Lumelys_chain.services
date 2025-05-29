@@ -17,14 +17,19 @@ async function obtenerDatos() {
     document.getElementById("resultado").innerHTML = JSON.stringify(data, null, 2);
 }
 
-document.addEventListener("DOMContentLoaded", obtenerDatos);
-async function obtenerDatos() {
+document.getElementById("consultar").addEventListener("click", async function() {
     let { data, error } = await supabase.from("inversores").select("*");
 
     if (error) {
-        alert("Error obteniendo datos: " + JSON.stringify(error));
+        document.getElementById("resultado").innerHTML = "<p>Error obteniendo datos: " + JSON.stringify(error) + "</p>";
         return;
     }
 
-    alert("Datos obtenidos: " + JSON.stringify(data)); // Muestra los datos en una alerta
-}
+    let contenido = "<h2>Datos de Inversores:</h2><ul>";
+    data.forEach(item => {
+        contenido += `<li>Usuario: ${item.usuario}, Inversión: ${item.inversion}, Ganancias: ${item.ganancias}</li>`;
+    });
+    contenido += "</ul>";
+
+    document.getElementById("resultado").innerHTML = contenido;
+});
