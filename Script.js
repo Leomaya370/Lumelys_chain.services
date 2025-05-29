@@ -33,3 +33,6 @@ document.getElementById("consultar").addEventListener("click", async function() 
 
     document.getElementById("resultado").innerHTML = contenido;
 });
+document.getElementById("consultar").addEventListener("click", function() {
+    alert("El botón se ha presionado.");
+});
