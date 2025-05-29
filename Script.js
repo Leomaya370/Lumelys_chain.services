@@ -16,5 +16,8 @@ function mostrarDatos() {
     } else {
         document.getElementById("resultado").style.display = "none";
         alert("ID no encontrado. Inténtalo de nuevo.");
+        document.getElementById("consultar").addEventListener("click", function() {
+    alert("¡El botón funciona!");
+});
     }
 }
