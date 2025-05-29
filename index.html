@@ -9,10 +9,17 @@
 <body>
     <h1>Bienvenido a Mi App de Inversión</h1>
     <p>Consulta tus datos aquí.</p>
+
+    <!-- Formulario para ingresar usuario -->
+    <input type="text" id="usuarioInput" placeholder="Ingrese su usuario">
+    <button onclick="consultarUsuario()">Consultar</button>
+
+    <!-- Espacio donde se mostrarán los datos del usuario -->
+    <p>Usuario: <span id="nombre"></span></p>
+    <p>Inversión: <span id="cantidad"></span></p>
+    <p>Ganancias disponibles: <span id="ganancias"></span></p>
+
+    <!-- Vincular el archivo JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
-<h1>Bienvenido a tu inversión</h1>
-<p>Usuario: <span id="nombre"></span></p>
-<p>Inversión: <span id="cantidad"></span></p>
-<p>Ganancias disponibles: <span id="ganancias"></span></p>
