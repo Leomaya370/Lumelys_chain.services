@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,46 +7,44 @@
     <title>Datos de Inversión</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        .info { border: 1px solid #ccc; padding: 10px; margin: 10px; display: none; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px; }
+        th { background-color: #f4f4f4; }
     </style>
 </head>
 <body>
-    <h1>Consulta tu inversión</h1>
-    <p>Ingresa tu ID para ver tu información:</p>
-    <input type="text" id="userIdInput" placeholder="Ingresa tu ID">
-    <button id="consultar">Consultar</button>
+    <h1>Consulta de Inversión</h1>
+    <p>Aquí puedes ver la información de cada usuario.</p>
 
-    <div id="resultado" class="info">
-        <h2>Datos de tu inversión</h2>
-        <p><strong>Usuario:</strong> <span id="nombre"></span></p>
-        <p><strong>Inversión:</strong> <span id="inversion"></span></p>
-        <p><strong>Ganancias:</strong> <span id="ganancias"></span></p>
-        <p><strong>Retiros:</strong> <span id="retiro"></span></p>
-    </div>
-
-    <!-- JavaScript dentro del HTML -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("consultar").addEventListener("click", function () {
-                let userId = document.getElementById("userIdInput").value;
-
-                const datosUsuarios = {
-                    "123": { usuario: "Carlos", inversion: "$5000", ganancias: "$1500", retiro: "$1000" },
-                    "456": { usuario: "Ana", inversion: "$8000", ganancias: "$2500", retiro: "$2000" },
-                    "789": { usuario: "Luis", inversion: "$12000", ganancias: "$4000", retiro: "$3500" }
-                };
-
-                if (datosUsuarios[userId]) {
-                    document.getElementById("nombre").innerText = datosUsuarios[userId].usuario;
-                    document.getElementById("inversion").innerText = datosUsuarios[userId].inversion;
-                    document.getElementById("ganancias").innerText = datosUsuarios[userId].ganancias;
-                    document.getElementById("retiro").innerText = datosUsuarios[userId].retiro;
-                    document.getElementById("resultado").style.display = "block"; // Mostrar datos
-                } else {
-                    alert("ID no encontrada. Inténtalo de nuevo.");
-                }
-            });
-        });
-    </script>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Inversión</th>
+            <th>Ganancias</th>
+            <th>Retiros</th>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>Carlos</td>
+            <td>$5000</td>
+            <td>$1500</td>
+            <td>$1000</td>
+        </tr>
+        <tr>
+            <td>456</td>
+            <td>Ana</td>
+            <td>$8000</td>
+            <td>$2500</td>
+            <td>$2000</td>
+        </tr>
+        <tr>
+            <td>789</td>
+            <td>Luis</td>
+            <td>$12000</td>
+            <td>$4000</td>
+            <td>$3500</td>
+        </tr>
+    </table>
 </body>
 </html>
