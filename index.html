@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi App de Inversión</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Datos de Inversión</title>
+    <script src="script.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .info { border: 1px solid #ccc; padding: 10px; margin: 10px; display: none; }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido a Mi App de Inversión</h1>
-    <p>Consulta tus datos aquí.</p>
+    <h1>Consulta tu inversión</h1>
+    <p>Ingresa tu ID para ver tu información:</p>
+    <input type="text" id="userIdInput" placeholder="Ingresa tu ID">
+    <button onclick="mostrarDatos()">Consultar</button>
 
-    <!-- Formulario para ingresar usuario -->
-    <input type="text" id="usuarioInput" placeholder="Ingrese su usuario">
-    <button onclick="consultarUsuario()">Consultar</button>
-    <div id="resultado">
-    <p>Los datos aparecerán aquí...</p>
+    <div id="resultado" class="info">
+        <h2>Datos de tu inversión</h2>
+        <p><strong>Usuario:</strong> <span id="nombre"></span></p>
+        <p><strong>Inversión:</strong> <span id="inversion"></span></p>
+        <p><strong>Ganancias:</strong> <span id="ganancias"></span></p>
+        <p><strong>Retiros:</strong> <span id="retiro"></span></p>
     </div>
-
-    <!-- Espacio donde se mostrarán los datos del usuario -->
-    <p>Usuario: <span id="nombre"></span></p>
-    <p>Inversión: <span id="cantidad"></span></p>
-    <p>Ganancias disponibles: <span id="ganancias"></span></p>
-
-    <!-- Vincular el archivo JavaScript -->
-    <script src="js/script.js"></script>
-    <script>
-alert("¡JavaScript cargado correctamente!");
-    </script>
 </body>
 </html>
