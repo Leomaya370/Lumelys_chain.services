@@ -18,3 +18,13 @@ async function obtenerDatos() {
 }
 
 document.addEventListener("DOMContentLoaded", obtenerDatos);
+async function obtenerDatos() {
+    let { data, error } = await supabase.from("inversores").select("*");
+
+    if (error) {
+        alert("Error obteniendo datos: " + JSON.stringify(error));
+        return;
+    }
+
+    alert("Datos obtenidos: " + JSON.stringify(data)); // Muestra los datos en una alerta
+}
