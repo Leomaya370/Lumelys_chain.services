@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 // Conectar con Supabase
 const supabaseUrl = "https://ccelrkpkzngfxdtfxugf.supabase.co";
-const supabaseAnonKey = "TU_API_KEY_AQUI";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjZWxya3Brem5nZnhkdGZ4dWdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg1MTU3NjgsImV4cCI6MjA2NDA5MTc2OH0.EevDNt7gNYhcPe3dM_DvMgtVgTnjA-NdhLeMzYT6y30";
 const supabase = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
 // Función para obtener datos del usuario desde Supabase
